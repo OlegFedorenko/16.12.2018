@@ -1,21 +1,19 @@
 <?php
 
-class Car
+class Car2
 {
     private $name;
-    private $carClass;
     private $price;
     private $isBusy;
 
-    public function __construct(string $name, string $carClass, int $price,bool $isBusy)
+    public function __construct(string $name, int $price,bool $isBusy)
     {
         $this->name = $name;
-        $this->carClass = $carClass;
         $this->price = $price;
         $this->isBusy = $isBusy;
     }
 
-    public function getIsBisy()
+    public function getIsBusy(): bool
     {
         return $this->isBusy;
     }

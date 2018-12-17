@@ -1,11 +1,8 @@
 <?php
 
-require_once __DIR__ .'/Car.php';
-
 class Autopark
 {
     private $cars = array();
-
 
     public function setCar($value)
     {
@@ -14,38 +11,38 @@ class Autopark
 
     public function getAvailableCars()
     {
-        $number = 0;
-        foreach ($this->cars as $arr)
+        $AvailableQty = 0;
+        foreach ($this->cars as $car)
         {
-            if (!$arr->getIsBisy())
+            if (!$car->getIsBusy())
             {
-                $number++;
+                $AvailableQty++;
             }
         }
-        return $number;
+        return $AvailableQty;
     }
 
-    public function getBisyCars()
+    public function getBusyCars()
     {
-        $number = 0;
-        foreach ($this->cars as $arr)
+        $BusyQty = 0;
+        foreach ($this->cars as $car)
         {
-            if ($arr->getIsBisy())
+            if ($car->getIsBusy())
             {
-                $number++;
+                $BusyQty++;
             }
         }
-        return $number;
+        return $BusyQty;
     }
 
     public function getProfit()
     {
         $profit = 0;
-        foreach ($this->cars as $arr)
+        foreach ($this->cars as $car)
         {
-            if ($arr->getIsBisy())
+            if ($car->getIsBusy())
             {
-                $profit+=$arr->getPrice();
+                $profit+=$car->getPrice();
             }
         }
         return $profit;
